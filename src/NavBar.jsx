@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = ({activeTab, setActiveTab}) => {
   return (
@@ -7,7 +8,7 @@ const NavBar = ({activeTab, setActiveTab}) => {
           className={`${activeTab === "home" ? "bg-[#EBF1FF]": ''} px-6 py-1 rounded-sm`}
           onClick={() => setActiveTab("home")}
         >
-          <a>
+          <Link to={"/"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -34,7 +35,7 @@ const NavBar = ({activeTab, setActiveTab}) => {
                 clipRule="evenodd"
               />
             </svg>
-          </a>
+          </Link>
         </div>
         <div className={`${activeTab === "search" ? "bg-[#EBF1FF]": ''} px-6 py-1 rounded-sm`} onClick={() => setActiveTab("search")}>
           <a>

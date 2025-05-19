@@ -1,17 +1,36 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AllNotes from "./AllNotes";
+import { v4 as uuidv4 } from "uuid";
+import Logo from "./Logo";
 import NavBar from "./NavBar";
 import Data from "../data.json";
-import Plus from "../src/assets/images/icon-plus.svg";
+import NoteDetail from "./NoteDetail";
+
+const notesWithIds = Data.notes.map((note, index) => ({
+  ...note,
+  id: index.toString(), // or use UUIDs if preferred
+}));
 
 function App() {
-  const [notes, setNotes] = useState(Data.notes);
+  const [notes, setNotes] = useState(notesWithIds);
   const [activeTab, setActiveTab] = useState("home");
+
   return (
-    <div>
-      <AllNotes notes={notes} />
-      <NavBar activeTab={activeTab} setActiveTab={setActiveTab}/>
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Logo />
+
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<AllNotes notes={notes}  setActiveTab={setActiveTab}/>} />
+            <Route path="/note/:id" element={<NoteDetail notes={notes} />} />
+          </Routes>
+        </div>
+
+        <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />
+      </div>
+    </Router>
   );
 }
 
