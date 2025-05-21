@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AllNotes from "./AllNotes";
+import AddButton from "./AddButton";
+import AddNote from "./AddNote"
 import { v4 as uuidv4 } from "uuid";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
@@ -23,11 +25,15 @@ function App() {
 
         <div className="flex-1">
           <Routes>
-            <Route path="/" element={<AllNotes notes={notes}  setActiveTab={setActiveTab}/>} />
-            <Route path="/note/:id" element={<NoteDetail notes={notes} />} />
+            <Route
+              path="/"
+              element={<AllNotes notes={notes} setActiveTab={setActiveTab} />}
+            />
+            <Route path="/note/:id" element={<NoteDetail setNotes={setNotes} notes={notes} />} />
+            <Route path="/new" element={<AddNote notes={notes} setNotes={setNotes} />} />
           </Routes>
         </div>
-
+        <AddButton setActiveTab={setActiveTab}/>
         <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
     </Router>
