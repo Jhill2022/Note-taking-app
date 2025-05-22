@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AllNotes from "./AllNotes";
+import NoteTags from "./NoteTags";
 import AddButton from "./AddButton";
 import AddNote from "./AddNote"
-import { v4 as uuidv4 } from "uuid";
 import Logo from "./Logo";
 import NavBar from "./NavBar";
 import Data from "../data.json";
@@ -31,6 +31,7 @@ function App() {
             />
             <Route path="/note/:id" element={<NoteDetail setNotes={setNotes} notes={notes} />} />
             <Route path="/new" element={<AddNote notes={notes} setNotes={setNotes} />} />
+            <Route path="/tags" element={<NoteTags notes={notes} setActiveTab={setActiveTab}/>}/>
           </Routes>
         </div>
         <AddButton setActiveTab={setActiveTab}/>

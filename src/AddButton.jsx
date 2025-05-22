@@ -17,9 +17,9 @@ const AddButton = ({setActiveTab}) => {
   }
 
   return (
-    <div onClick={takeAway} className="w-[48px] h-[48px] bg-[#335CFF] rounded-full flex justify-center items-center fixed bottom-18 right-4 z-20">
+    <button disabled={location.pathname === "/tags"} onClick={takeAway} className="w-[48px] h-[48px] bg-[#335CFF] rounded-full flex justify-center items-center fixed bottom-18 right-4 z-20">
           <img src="../src/assets/images/icon-plus.svg" alt="" />
-        </div>
+        </button>
   )
 }
 

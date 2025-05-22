@@ -1,7 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const NavBar = ({activeTab, setActiveTab}) => {
+
+  const navigate = useNavigate()
+
+
+  function onTabs() {
+   navigate("/tags")
+   setActiveTab("tags")
+  }
   return (
     <div className="flex  justify-between px-4 py-3 sticky bottom-0 bg-white z-20 shadow-[inset_0_0_0_1px_#E0E4EA]">
         <div
@@ -87,7 +95,7 @@ const NavBar = ({activeTab, setActiveTab}) => {
             </svg>
           </a>
         </div>
-        <div className={`${activeTab === "tags" ? "bg-[#EBF1FF]": ''} px-6 py-1 rounded-sm`} onClick={() => setActiveTab("tags")}>
+        <div onClick={onTabs} className={`${activeTab === "tags" ? "bg-[#EBF1FF]": ''} px-6 py-1 rounded-sm`}>
           <a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
