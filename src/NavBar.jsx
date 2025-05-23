@@ -11,7 +11,7 @@ const NavBar = ({activeTab, setActiveTab}) => {
    setActiveTab("tags")
   }
   return (
-    <div className="flex  justify-between px-4 py-3 sticky bottom-0 bg-white z-20 shadow-[inset_0_0_0_1px_#E0E4EA]">
+    <div className="flex lg:hidden  justify-between px-4 py-3 sticky bottom-0 bg-white z-20 shadow-[inset_0_0_0_1px_#E0E4EA]">
         <div
           className={`${activeTab === "home" ? "bg-[#EBF1FF]": ''} px-6 py-1 rounded-sm`}
           onClick={() => setActiveTab("home")}

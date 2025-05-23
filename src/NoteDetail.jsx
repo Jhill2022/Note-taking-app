@@ -19,7 +19,7 @@ function NoteDetail({ notes, setNotes }) {
 
   return (
     <div className="px-4 pt-5">
-      <div className="border-b-1 border-[#E0E4EA]">
+      <div className="border-b-1 border-[#E0E4EA] lg:hidden">
         <div className="mb-3 flex justify-between ">
           <div
             className="flex text-[#525866] text-lg items-center gap-2"
