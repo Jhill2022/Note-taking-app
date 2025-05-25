@@ -5,9 +5,9 @@ const AllNotes = ({ notes, setActiveTab }) => {
   return (
     <div>
       
-      <div className="px-4 pt-5">
-        <h1 className="font-bold text-2xl">All Notes</h1>
-        <div className="px-2 pt-4">
+      <div className="px-4 pt-5 ">
+        <h1 className="font-bold text-2xl lg:hidden">All Notes</h1>
+        <div className="px-2 pt-4 lg:pt-0 lg:overflow-y-auto lg:max-h-[calc(100vh-200px)]">
           {notes.map((note, index) => (
             <Link key={index} to={`/note/${note.id}`} onClick={() => setActiveTab(null)}>
               <div className="border-b-1 border-[#E0E4EA] mt-3">

@@ -6,11 +6,11 @@ const NoteTags = ({ notes, setSelectedTag = () => {} } ) => {
     const navigate = useNavigate()
   return (
     <div className="px-4 pt-5">
-      <h1 className="text-2xl font-bold mb-3">Tags</h1>
+      <h1 className="text-2xl font-bold mb-3 lg:text-sm lg:text-[#717784] lg:font-semibold">Tags</h1>
       {uniqueTags.map((tag, index) => (
         <div
           key={index}
-          className="flex items-center gap-2 mt-4 pb-3 border-b border-[#E0E4EA] last:border-b-0 cursor-pointer hover:text-blue-600"
+          className="flex items-center gap-2 mt-4 pb-3 border-b border-[#E0E4EA] lg:border-b-0 lg:mt-1 last:border-b-0 cursor-pointer hover:text-blue-600"
           onClick={() => {
           setSelectedTag(tag)      // still needed for desktop
       navigate(`/tags/${tag}`);      // ← THIS is the mobile navigation

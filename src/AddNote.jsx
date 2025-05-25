@@ -56,7 +56,7 @@ const AddNote = ({ setNotes}) => {
     <div className="px-4 pt-5">
       <div className="border-b-1 border-[#E0E4EA]">
         <div className="mb-3 flex justify-between ">
-          <div onClick={() => navigate("/")}className="flex text-[#525866] text-lg items-center gap-2" to={"/"}>
+          <div onClick={() => navigate("/")} className="flex text-[#525866] text-lg items-center gap-2">
             <img src="../src/assets/images/icon-arrow-left.svg" alt="" /> Go
             Back
           </div>
@@ -71,7 +71,7 @@ const AddNote = ({ setNotes}) => {
         <input value={title} onChange={(e) => setTitle(e.target.value)} className='text-2xl placeholder-[#0E121B]' type="text" placeholder='Enter a title...'/>
         <div className="border-b-1 border-[#E0E4EA]">
             <div className="flex mt-3 ">
-              <div className="w-[270px]">
+              <div className="w-[235px]">
                 <p className="flex gap-2 text-[#2B303B]">
                   <img src="../src/assets/images/icon-tag.svg" alt="" />
                   Tags
@@ -90,7 +90,7 @@ const AddNote = ({ setNotes}) => {
             </div>
         </div>
       </div>
-      <textarea value={content} onChange={(e) => setContent(e.target.value)}className='w-full min-h-screen placeholder-[#2B303B]' placeholder='Start typing your note here…'></textarea>
+      <textarea value={content} onChange={(e) => setContent(e.target.value)}className='w-full  placeholder-[#2B303B]' placeholder='Start typing your note here…'></textarea>
     </div>
   )
 }
